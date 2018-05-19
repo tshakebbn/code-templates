@@ -16,8 +16,8 @@
  * [other designations]
  */
 
-#ifndef CODE_TEMPLATES_CPP_SRC_UTILS_EXCEPTIONS_H_
-#define CODE_TEMPLATES_CPP_SRC_UTILS_EXCEPTIONS_H_
+#ifndef CODE_TEMPLATES_CPP_SRC_UTILS_EXCEPTIONS_HPP_
+#define CODE_TEMPLATES_CPP_SRC_UTILS_EXCEPTIONS_HPP_
 
 #include <exception>
 #include <stdexcept>
@@ -39,4 +39,4 @@ struct ExampleException : public std::exception {
 
 }  // namespace cpp_exceptions
 
-#endif  // CODE_TEMPLATES_CPP_SRC_UTILS_EXCEPTIONS_H_
+#endif  // CODE_TEMPLATES_CPP_SRC_UTILS_EXCEPTIONS_HPP_
