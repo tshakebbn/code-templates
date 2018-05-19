@@ -6,7 +6,10 @@
  * A more elaborate description of exceptions.
  *
  * @author [organization]
- * @author [name]
+ * @author [name] (optional)
+ *
+ * @par [unique category]
+ * [designation]
  *
  * @par Notifications
  * [distribution designation]
