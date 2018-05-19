@@ -45,15 +45,12 @@ void initialize(void) {
         program_options::options_description description("Log Options");
 
         // setup options
+        log_settings.file = LOG_FILE;
         description.add_options()
             ("logger.level",
                 program_options::value<std::string>
                     (&log_settings.level)->required(),
-                "Logger severity level setting")
-            ("logger.file",
-                program_options::value<std::string>
-                    (&log_settings.file)->required(),
-                "Log file name and location");
+                "Logger severity level setting");
 
         // load conf file
         std::ifstream conf_file(CONFIG_FILE,
