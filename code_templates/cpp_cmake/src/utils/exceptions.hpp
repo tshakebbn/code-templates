@@ -1,9 +1,9 @@
 /** Copyright [year] [organization]
  *
- * @file exceptions.h
+ * @file exceptions.hpp
  *
  * @brief Example defined exceptions.
- * A more elaborate description of exceptions.
+ * A more elaborate description of exceptions. (optional)
  *
  * @author [organization]
  * @author [name] (optional)

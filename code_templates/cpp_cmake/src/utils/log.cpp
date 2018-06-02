@@ -28,7 +28,7 @@
 #include "exceptions.h"
 #include "config.h"
 
-namespace tools_log {
+namespace cpp_log {
 
 namespace logging = boost::log;
 namespace logging_keywords = boost::log::keywords;
@@ -130,4 +130,4 @@ void log_fatal(const char* message, const char* file, int line) {
     << ": " << line << "]: " << message;
 }
 
-}  // namespace tools_log
+}  // namespace cpp_log

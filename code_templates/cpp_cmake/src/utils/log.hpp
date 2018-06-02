@@ -1,9 +1,9 @@
 /** Copyright [year] [organization]
  *
- * @file log.h
+ * @file log.hpp
  *
  * @brief Includes useful logging functions.
- * A more elaborate description of logging.
+ * A more elaborate description of logging. (optional)
  *
  * @author [organization]
  * @author [name] (optional)
