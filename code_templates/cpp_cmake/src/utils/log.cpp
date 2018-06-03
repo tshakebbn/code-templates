@@ -24,9 +24,9 @@
 #include <boost/log/utility/setup/file.hpp>
 #include <boost/log/utility/setup/common_attributes.hpp>
 
-#include "log.h"
-#include "exceptions.h"
-#include "config.h"
+#include "log.hpp"
+#include "exceptions.hpp"
+#include "config.hpp"
 
 namespace cpp_log {
 
