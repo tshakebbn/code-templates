@@ -16,8 +16,8 @@
  * [other designations]
  */
 
-#ifndef CODE_TEMPLATES_CPP_CMAKE_SRC_UTILS_LOG_HPP_
-#define CODE_TEMPLATES_CPP_CMAKE_SRC_UTILS_LOG_HPP_
+#ifndef CODE_TEMPLATES_CPP_SRC_UTILS_LOG_HPP_
+#define CODE_TEMPLATES_CPP_SRC_UTILS_LOG_HPP_
 
 #include <string>
 
@@ -107,4 +107,4 @@ void log_fatal(const char* message, const char* file, int line);
 
 }  // namespace cpp_log
 
-#endif  // CODE_TEMPLATES_CPP_CMAKE_SRC_UTILS_LOG_HPP_
+#endif  // CODE_TEMPLATES_CPP_SRC_UTILS_LOG_HPP_

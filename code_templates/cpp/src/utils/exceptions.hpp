@@ -2,7 +2,7 @@
  *
  * @file exceptions.hpp
  *
- * @brief Example defined exceptions.
+ * @brief An example exception.
  * A more elaborate description of exceptions. (optional)
  *
  * @author [organization]
@@ -16,8 +16,8 @@
  * [other designations]
  */
 
-#ifndef CODE_TEMPLATES_CPP_CMAKE_SRC_UTILS_EXCEPTIONS_HPP_
-#define CODE_TEMPLATES_CPP_CMAKE_SRC_UTILS_EXCEPTIONS_HPP_
+#ifndef CODE_TEMPLATES_CPP_SRC_UTILS_EXCEPTIONS_HPP_
+#define CODE_TEMPLATES_CPP_SRC_UTILS_EXCEPTIONS_HPP_
 
 #include <exception>
 #include <stdexcept>
@@ -39,4 +39,4 @@ struct ExampleException : public std::exception {
 
 }  // namespace cpp_exceptions
 
-#endif  // CODE_TEMPLATES_CPP_CMAKE_SRC_UTILS_EXCEPTIONS_HPP_
+#endif  // CODE_TEMPLATES_CPP_SRC_UTILS_EXCEPTIONS_HPP_
