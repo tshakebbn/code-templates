@@ -19,11 +19,12 @@
 #include "example.hpp"
 #include "log.hpp"
 #include "exceptions.hpp"
+#include "config.hpp"
 
 namespace example {
 
 Example::Example(void) {
-    cpp_log::initialize();
+    cpp_log::initialize(LOG_FILE, CONFIG_FILE);
 }
 
 Example::~Example(void) {
