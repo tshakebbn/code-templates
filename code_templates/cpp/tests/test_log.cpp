@@ -113,32 +113,32 @@ TEST_F(TestLog, WritesLogMessages) {
     }
     std::string line;
     std::getline(log_file, line);
-    line.erase(0, 27);
+    line.erase(0, line.find('<'));
     EXPECT_STREQ(line.c_str(),
         "<trace> [test_log.cpp: 104]: A trace severity message");
 
     std::getline(log_file, line);
-    line.erase(0, 27);
+    line.erase(0, line.find('<'));
     EXPECT_STREQ(line.c_str(),
         "<debug> [test_log.cpp: 105]: A debug severity message");
 
     std::getline(log_file, line);
-    line.erase(0, 27);
+    line.erase(0, line.find('<'));
     EXPECT_STREQ(line.c_str(),
         "<info> [test_log.cpp: 106]: An informational severity message");
 
     std::getline(log_file, line);
-    line.erase(0, 27);
+    line.erase(0, line.find('<'));
     EXPECT_STREQ(line.c_str(),
         "<warning> [test_log.cpp: 107]: A warning severity message");
 
     std::getline(log_file, line);
-    line.erase(0, 27);
+    line.erase(0, line.find('<'));
     EXPECT_STREQ(line.c_str(),
         "<error> [test_log.cpp: 108]: An error severity message");
 
     std::getline(log_file, line);
-    line.erase(0, 27);
+    line.erase(0, line.find('<'));
     EXPECT_STREQ(line.c_str(),
         "<fatal> [test_log.cpp: 109]: A fatal severity message");
     delete_config();
