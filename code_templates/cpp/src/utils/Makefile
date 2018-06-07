@@ -22,7 +22,7 @@ LIBRARY_OUTPUT_PATH = ../../build/lib
 LIBRARY_NAME = libcpputils
 
 # Install path
-LIB_INSTALL_PATH = /usr/local/lib/cpp
+LIB_INSTALL_PATH = /usr/local/lib
 HEAD_INSTALL_PATH = /usr/local/include/cpp
 
 # Rules start here

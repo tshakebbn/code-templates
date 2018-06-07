@@ -13,6 +13,8 @@ set (LOG_FILE ${CMAKE_INSTALL_PREFIX}/etc/${PROJECT_NAME}/cpp.log)
 configure_file ("${CONFIG_DIR}/config.hpp.in" "${PROJECT_BINARY_DIR}/config.hpp")
 include_directories("${PROJECT_BINARY_DIR}")
 install (FILES ${CONFIG_DIR}/cpp.conf DESTINATION etc/${PROJECT_NAME} PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ GROUP_WRITE WORLD_READ WORLD_WRITE)
+file (WRITE cpp.log "")
+install (FILES cpp.log DESTINATION etc/${PROJECT_NAME} PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ GROUP_WRITE WORLD_READ WORLD_WRITE)
 
 # Compile flags
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
@@ -25,3 +27,6 @@ add_subdirectory (tests)
 enable_testing()
 add_test (NAME test_log COMMAND test_log)
 add_test (NAME test_example COMMAND test_example)
+
+# add the executables
+add_subdirectory (src)
