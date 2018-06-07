@@ -17,16 +17,13 @@
  */
 
 #include <gtest/gtest.h>
+#include <fstream>
+#include <cstdio>
 
 #include "../src/utils/example.hpp"
+#include "config.hpp"
 
 namespace test_example {
-
-// redefine for use in unit test
-#undef LOG_FILE
-#undef CONFIG_FILE
-#define LOG_FILE "./unit_test.log"
-#define CONFIG_FILE "./unit_test.conf"
 
 class TestExample : public ::testing::Test {
  protected:
@@ -36,12 +33,34 @@ class TestExample : public ::testing::Test {
     virtual ~TestExample(void) {
     }
 
- private:
-    example::Example example;
+    // helper function  to create good config file
+    void create_config(std::string level) {
+        std::ofstream conf_file(LOCAL_CONFIG_FILE, std::ofstream::out);
+        if (!conf_file) {
+            throw std::runtime_error("Unable to create local config file");
+        }
+        conf_file << "[logger]\n" << "level=" << level << "\n\n";
+        conf_file << "[options]\n" << "name=example_one\n";
+        conf_file.close();
+    }
+
+    // helper function to delete config file
+    void delete_config(void) {
+        std::remove(LOCAL_CONFIG_FILE);
+    }
+
+    // helper function to delete log file
+    void delete_log(void) {
+        std::remove(LOCAL_LOG_FILE);
+    }
 };
 
 TEST_F(TestExample, ExecutesExampleFunction) {
-    EXPECT_EQ(example.function(0, 0), 0);
+    create_config("INFO");
+    example::Example example;
+    EXPECT_EQ(example.example_function(0, 0), 0);
+    delete_config();
+    delete_log();
 }
 
 }  // namespace test_example
