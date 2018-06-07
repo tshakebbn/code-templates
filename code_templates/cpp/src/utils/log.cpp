@@ -24,6 +24,7 @@
 
 #include "log.hpp"
 #include "exceptions.hpp"
+#include "config.hpp"
 
 namespace cpp_log {
 
@@ -35,14 +36,26 @@ static logging_sources::severity_logger
     <logging_trivial::severity_level> glogger;
 static bool initialize_called = false;
 
-void initialize(std::string log_file, std::string cfg_file) {
+void initialize(void) {
     if (!initialize_called) {
         LogSettings log_settings;
         program_options::variables_map variables_map;
         program_options::options_description description("Log Options");
 
+        // check log file
+        log_settings.file = LOG_FILE;
+        std::ofstream log_file(LOG_FILE, std::ofstream::out);
+        if (!log_file) {
+            log_settings.file = LOCAL_LOG_FILE;
+            log_file.close();
+            log_file.clear();
+            log_file.open(LOCAL_LOG_FILE, std::ofstream::out);
+            if (!log_file) {
+                throw std::runtime_error("Unable to write to log file");
+            }
+        }
+
         // setup options
-        log_settings.file = log_file;
         description.add_options()
             ("logger.level",
                 program_options::value<std::string>
@@ -50,10 +63,15 @@ void initialize(std::string log_file, std::string cfg_file) {
                 "Logger severity level setting");
 
         // load conf file
-        std::ifstream conf_file(cfg_file.c_str(),
+        std::ifstream conf_file(CONFIG_FILE,
             std::ifstream::in);
         if (!conf_file) {
-            throw std::runtime_error("Missing configuration file");
+            conf_file.close();
+            conf_file.clear();
+            conf_file.open(LOCAL_CONFIG_FILE, std::ifstream::in);
+            if (!conf_file) {
+                throw std::runtime_error("Missing configuration file");
+            }
         }
         program_options::store(
             program_options::parse_config_file(conf_file, description, true),

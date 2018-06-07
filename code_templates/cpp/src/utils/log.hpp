@@ -42,14 +42,12 @@ struct LogSettings {
 };
 
 /**
- * Initializes logger based on input parameters.
- * @param  log_file					log file name and location
- * @param  conf_file				conf file name and location
+ * Initializes logger.
  * @throws std::runtime_error       error interfacing with config file
  * @throws std::invalid_argument    invalid argument in config file
  * @throws boost::exception         missing argument in config file
  */
-void initialize(std::string log_file, std::string conf_file);
+void initialize(void);
 
 /**
  * Log a trace message
@@ -57,6 +55,7 @@ void initialize(std::string log_file, std::string conf_file);
  * @param   file    file name macro
  * @param   line    line number macro
  * @throws  std::runtime_error       logger not initialized
+ * @throws  boost::filesystem::filesystem_error		permission denied
  */
 void log_trace(const char* message, const char* file, int line);
 
@@ -66,6 +65,7 @@ void log_trace(const char* message, const char* file, int line);
  * @param   file    file name macro
  * @param   line    line number macro
  * @throws  std::runtime_error       logger not initialized
+ * @throws  boost::filesystem::filesystem_error		permission denied
  */
 void log_debug(const char* message, const char* file, int line);
 
@@ -75,6 +75,7 @@ void log_debug(const char* message, const char* file, int line);
  * @param   file    file name macro
  * @param   line    line number macro
  * @throws  std::runtime_error       logger not initialized
+ * @throws  boost::filesystem::filesystem_error		permission denied
  */
 void log_info(const char* message, const char* file, int line);
 
@@ -84,6 +85,7 @@ void log_info(const char* message, const char* file, int line);
  * @param   file    file name macro
  * @param   line    line number macro
  * @throws  std::runtime_error       logger not initialized
+ * @throws  boost::filesystem::filesystem_error		permission denied
  */
 void log_warning(const char* message, const char* file, int line);
 
@@ -93,6 +95,7 @@ void log_warning(const char* message, const char* file, int line);
  * @param   file    file name macro
  * @param   line    line number macro
  * @throws  std::runtime_error       logger not initialized
+ * @throws  boost::filesystem::filesystem_error		permission denied
  */
 void log_error(const char* message, const char* file, int line);
 
@@ -102,6 +105,7 @@ void log_error(const char* message, const char* file, int line);
  * @param   file    file name macro
  * @param   line    line number macro
  * @throws  std::runtime_error       logger not initialized
+ * @throws  boost::filesystem::filesystem_error		permission denied
  */
 void log_fatal(const char* message, const char* file, int line);
 

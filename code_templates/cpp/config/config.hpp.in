@@ -2,3 +2,5 @@
 #define PROJECT_NAME "@PROJECT_NAME@"
 #define CONFIG_FILE "@CONFIG_FILE@"
 #define LOG_FILE "@LOG_FILE@"
+#define LOCAL_LOG_FILE "./cpp.log"
+#define LOCAL_CONFIG_FILE "./cpp.conf"
