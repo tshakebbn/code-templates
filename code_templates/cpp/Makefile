@@ -13,7 +13,7 @@ LOCAL_CONFIG_PATH = ./config
 DOC_OUTPUT_PATH = /usr/local/share/doc/cpp
 
 # Local document path
-LOCAL_DOC_PATH = ./build/doc
+LOCAL_DOC_PATH = ./build/docs
 
 # Rules start here
 all: cpp docs
@@ -30,15 +30,15 @@ clean:
 install:
 	$(MAKE) -C src/ install
 	mkdir -p $(CONFIG_OUTPUT_PATH)
-	cp $(LOCAL_CONFIG_PATH)/example.conf $(CONFIG_OUTPUT_PATH)
-	touch $(CONFIG_OUTPUT_PATH)/example.log
-	chmod 666 $(CONFIG_OUTPUT_PATH)/example.log
+	cp $(LOCAL_CONFIG_PATH)/cpp.conf $(CONFIG_OUTPUT_PATH)
+	touch $(CONFIG_OUTPUT_PATH)/cpp.log
+	chmod 666 $(CONFIG_OUTPUT_PATH)/cpp.log
 	mkdir -p $(DOC_OUTPUT_PATH)
 	cp -r $(LOCAL_DOC_PATH)/* $(DOC_OUTPUT_PATH)
 
 uninstall:
 	$(MAKE) -C src/ uninstall
-	$(RM) $(CONFIG_OUTPUT_PATH)/example.conf
+	$(RM) $(CONFIG_OUTPUT_PATH)/cpp.conf
 	$(RM) -r $(DOC_OUTPUT_PATH)/*
 
 test:

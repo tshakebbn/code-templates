@@ -46,7 +46,9 @@ clean:
 	$(RM) *.o
 
 install:
+	mkdir -p $(LIB_INSTALL_PATH)
 	cp $(LIBRARY_OUTPUT_PATH)/$(LIBRARY_NAME).a $(LIB_INSTALL_PATH)
+	mkdir -p $(HEAD_INSTALL_PATH)
 	cp exceptions.hpp $(HEAD_INSTALL_PATH)
 	cp example.hpp $(HEAD_INSTALL_PATH)
 	cp log.hpp $(HEAD_INSTALL_PATH)
