@@ -19,7 +19,7 @@
 #ifndef CODE_TEMPLATES_CPP_CONFIG_CONFIG_HPP_
 #define CODE_TEMPLATES_CPP_CONFIG_CONFIG_HPP_
 
-#define VERSION "0.0.0.1"
+#define VERSION "1.0.0.0"
 #define PROJECT_NAME "cpp"
 #define CONFIG_FILE "/usr/local/etc/cpp/cpp.conf"
 #define LOG_FILE "/usr/local/etc/cpp/cpp.log"

@@ -4,7 +4,7 @@
 #
 
 cmake_minimum_required (VERSION 3.0)
-project (cpp VERSION 0.0.0.1 LANGUAGES CXX)
+project (cpp VERSION 1.0.0.0 LANGUAGES CXX)
 
 # Configure CMAKE
 set (CONFIG_DIR ${CMAKE_CURRENT_SOURCE_DIR}/config)
