@@ -1,0 +1,3 @@
+[submodule "code_templates/python"]
+	path = code_templates/python
+	url = git@github.com:tshakebbn/python-app.git
