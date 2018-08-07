@@ -1,3 +1,6 @@
 [submodule "code_templates/python"]
 	path = code_templates/python
 	url = git@github.com:tshakebbn/python-app.git
+[submodule "code_templates/cpp"]
+	path = code_templates/cpp
+	url = git@github.com:tshakebbn/cpp-app.git
